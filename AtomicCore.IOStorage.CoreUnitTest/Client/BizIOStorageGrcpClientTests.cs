@@ -50,7 +50,11 @@ namespace AtomicCore.IOStorage.Core.Tests
             {
                 fs.Seek(0, SeekOrigin.Begin);
 
-                result = client.UploadFile("Test", null, string.Empty, ".jpg", fs).Result;
+                // 方式1 直接指定文件名称，文件后缀允许为空
+                result = client.UploadFile("Test", null, "abcd.jpg", string.Empty, fs).Result;
+
+                // 方式2 指定文件格式，文件名称通过文件流的MD5总计算
+                //result = client.UploadFile("Test", null, string.Empty, ".jpg", fs).Result;
             }
 
             Assert.IsTrue(result.Code == BizIOStateCode.Success);
