@@ -27,7 +27,7 @@
   <ItemGroup>
     <PackageReference Include="AtomicCore" Version="1.2.1" />
     <PackageReference Include="AtomicCore.IOStorage.Core" Version="1.2.2" />
-    <PackageReference Include="Google.Protobuf" Version="3.21.8" />
+    <PackageReference Include="Google.Protobuf" Version="3.21.9" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
     <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.49.0" />
     <PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="2.2.0" />
