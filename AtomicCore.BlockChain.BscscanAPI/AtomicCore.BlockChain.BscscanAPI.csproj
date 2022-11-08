@@ -10,7 +10,7 @@
     <Authors>171331668@qq.com</Authors>
     <PackageProjectUrl>https://github.com/dannyhu/AtomicCore</PackageProjectUrl>
     <PackageTags>AtomicCore,BlockChain,BscChain,BscscanAPI</PackageTags>
-    <Version>1.0.8</Version>
+    <Version>1.3.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
