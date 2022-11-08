@@ -42,15 +42,14 @@ namespace AtomicCore.IOStorage.Core
         /// <param name="bizFolder"></param>
         /// <param name="indexFolder"></param>
         /// <param name="fileName"></param>
+        /// <param name="fileExt"></param>
         /// <param name="fileStream"></param>
         /// <returns></returns>
-        public async Task<BizIOSingleUploadJsonResult> UploadFile(string bizFolder, string indexFolder, string fileName, Stream fileStream)
+        public async Task<BizIOSingleUploadJsonResult> UploadFile(string bizFolder, string indexFolder, string fileName, string fileExt, Stream fileStream)
         {
             //基础判断
             if (string.IsNullOrEmpty(bizFolder))
                 return new BizIOSingleUploadJsonResult("请指定业务文件夹");
-            if (string.IsNullOrEmpty(fileName))
-                return new BizIOSingleUploadJsonResult("文件名称不允许为空");
             if (null == fileStream || fileStream.Length <= 0)
                 return new BizIOSingleUploadJsonResult("文件流不允许为空");
 
@@ -98,8 +97,8 @@ namespace AtomicCore.IOStorage.Core
                     {
                         BizFolder = bizFolder,
                         IndexFolder = indexFolder ?? string.Empty,
-                        FileName = fileName,
-                        FileExt = string.Empty,
+                        FileName = string.IsNullOrEmpty(fileName) ? string.Empty : fileName,
+                        FileExt = string.IsNullOrEmpty(fileExt) ? string.Empty : fileExt.StartsWith(".") ? fileExt : $".{fileExt}",
                         FileBytes = ByteString.CopyFrom(buffer)
                     };
 

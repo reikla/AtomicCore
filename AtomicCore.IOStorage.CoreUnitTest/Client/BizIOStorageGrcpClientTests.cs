@@ -30,7 +30,7 @@ namespace AtomicCore.IOStorage.Core.Tests
             {
                 fs.Seek(0, SeekOrigin.Begin);
 
-                result = client.UploadFile("Test", null, "123.jpg", fs).Result;
+                result = client.UploadFile("Test", null, string.Empty, ".jpg", fs).Result;
             }
 
             Assert.IsTrue(result.Code == BizIOStateCode.Success);
@@ -50,7 +50,7 @@ namespace AtomicCore.IOStorage.Core.Tests
             {
                 fs.Seek(0, SeekOrigin.Begin);
 
-                result = client.UploadFile("Test", null, "456.jpg", fs).Result;
+                result = client.UploadFile("Test", null, string.Empty, ".jpg", fs).Result;
             }
 
             Assert.IsTrue(result.Code == BizIOStateCode.Success);
