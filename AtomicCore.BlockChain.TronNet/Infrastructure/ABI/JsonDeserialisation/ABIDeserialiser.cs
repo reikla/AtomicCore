@@ -141,7 +141,7 @@ namespace AtomicCore.BlockChain.TronNet
         /// <returns></returns>
         public ContractABI DeserialiseContract(string abi)
         {
-            List<IDictionary<string, object>> contract = Newtonsoft.Json.JsonConvert.DeserializeObject<List<IDictionary<string, object>>>(abi);
+            List<IDictionary<string, object>> contract = Newtonsoft.Json.JsonConvert.DeserializeObject<List<IDictionary<string, object>>>(abi, new ExpandoObjectConverter());
 
             return DeserialiseContractBody(contract);
         }
